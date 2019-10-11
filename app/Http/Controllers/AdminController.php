@@ -27,14 +27,7 @@ class AdminController extends Controller
     {
         return view('admin');
     }
-    public function login()
-    {
-        return view('adminlogin');
-    }
-    public function register()
-    {
-        return view('adminregister');
-    }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -56,7 +49,7 @@ class AdminController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'title'=>'admin'
+            'title' => 'admin'
         ]);
     }
 }
