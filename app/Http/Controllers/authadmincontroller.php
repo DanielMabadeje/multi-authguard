@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Admin;
 use Illuminate\Support\Facades\Validator;
 
-class AdminController extends Controller
+class AuthAdminController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -15,7 +15,7 @@ class AdminController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        // $this->middleware('auth:admin');
     }
 
     /**
@@ -23,17 +23,14 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('admin');
-    }
+
     public function login()
     {
-        return view('adminlogin');
+        return view('auth/adminlogin');
     }
     public function register()
     {
-        return view('adminregister');
+        return view('auth/adminregister');
     }
     protected function validator(array $data)
     {

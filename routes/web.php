@@ -19,3 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/admin/login', 'AuthAdminController@login')->name('adminlogin');
+Route::get('/admin/register', 'AuthAdminController@register')->name('adminregister');
+Route::post('/admin/register', 'AuthAdminController@create')->name('registeradmin');
