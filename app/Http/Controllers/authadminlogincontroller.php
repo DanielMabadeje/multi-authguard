@@ -83,4 +83,10 @@ class authadminLoginController extends Controller
         return $this->authenticated($request, $this->guardAdmin()->user())
             ?: redirect()->intended($this->redirectPath());
     }
+
+
+    protected function guardAdmin()
+    {
+        return Auth::guard('admin');
+    }
 }
